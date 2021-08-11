@@ -49,3 +49,33 @@ def ngif():
 def cuddle():
     x = requests.get('https://nekos.life/api/v2/img/cuddle')
     print(x.json()['url'])
+    
+def baka():
+    x = requests.get('https://nekos.best/baka')
+    print(x.json()['url'])
+    
+def wave():
+    x = requests.get('https://nekos.best/wave')
+    print(x.json()['url'])
+    
+def smile():
+    x = requests.get('https://nekos.best/smile')
+    print(x.json()['url'])
+    
+def laugh():
+    x = requests.get('https://nekos.best/laugh')
+    print(x.json()['url'])
+    
+def cry():
+    x = requests.get('https://nekos.best/cry')
+    print(x.json()['url'])
+    
+def blush():
+    x = requests.get('https://purrbot.site/api/img/sfw/blush/gif')
+    print(x.json()['link'])
+    
+def okami():
+    # Okami = wolf girl
+    x = requests.get('https://purrbot.site/api/img/sfw/okami/img')
+    print(x.json()['link'])
+    
