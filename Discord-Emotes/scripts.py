@@ -1,51 +1,42 @@
-import requests
+import requests, aiohttp
+
+async def request(url):
+ async with aiohttp.ClientSession() as cs:
+  async with cs.get(url) as r:
+    data = r.json()
+    return data['url']
+   
+async def smug():
+ return await request("https://nekos.life/api/v2/img/smug")
 
 
-def smug():
-    x = requests.get('https://nekos.life/api/v2/img/smug')
-    print(x.json()['url'])
+async def hug():
+  return await request('https://nekos.life/api/v2/img/hug')
 
 
-def hug():
-    x = requests.get('https://nekos.life/api/v2/img/hug')
-    print(x.json()['url'])
+async def kiss():
+  return await request('https://nekos.life/api/kiss')
 
 
-def kiss():
-    x = requests.get('https://nekos.life/api/kiss')
-    print(x.json()['url'])
+async def pat():
+  return await request('https://nekos.life/api/v2/img/pat')
+
+async def poke():
+ return await request('https://nekos.life/api/v2/img/poke')
+
+async def slap():
+  return await request('https://nekos.life/api/v2/img/slap')
+
+async def tickle():
+  return await request('https://nekos.life/api/v2/img/tickle')
 
 
-def pat():
-    x = requests.get('https://nekos.life/api/v2/img/pat')
-    print(x.json()['url'])
+async def neko():
+  return await request('https://nekos.life/api/neko')
 
 
-def poke():
-    x = requests.get('https://nekos.life/api/v2/img/poke')
-    print(x.json()['url'])
+async def ngif():
+  return await request('https://nekos.life/api/v2/img/ngif')
 
-
-def slap():
-    x = requests.get('https://nekos.life/api/v2/img/slap')
-    print(x.json()['url'])
-
-
-def tickle():
-    x = requests.get('https://nekos.life/api/v2/img/tickle')
-    print(x.json()['url'])
-
-
-def neko():
-    x = requests.get('https://nekos.life/api/neko')
-    print(x.json()['neko'])
-
-
-def ngif():
-    x = requests.get('https://nekos.life/api/v2/img/ngif')
-    print(x.json()['url'])
-
-
-def cuddle():
-    x = requests.get('https://nekos.life/api/v2/img/cuddle')
-    print(x.json()['url'])
+async def cuddle():
+  return await request('https://nekos.life/api/v2/img/cuddle')
